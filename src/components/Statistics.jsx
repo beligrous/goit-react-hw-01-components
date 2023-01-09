@@ -1,21 +1,16 @@
-import data from '../data.json';
-export function Statistic(props) {
-  return (
-    <section class="statistics">
-      <h2 class="title">Upload stats</h2>
+import PropTypes from 'prop-types';
 
-      <ul class="stat-list">
-        <Stats label={data.label} percentage={data.percentage} />
-      </ul>
-    </section>
+export default function StatItem({ id, label, percentage }) {
+  return (
+    <li key={id} className="item">
+      <span className="label">{label}</span>
+      <span className="percentage">{percentage}%</span>
+    </li>
   );
 }
 
-function Stats(props) {
-  return data.map(item => (
-    <li class="item">
-      <span class="label">{item.label}</span>
-      <span class="percentage">{item.percentage}%</span>
-    </li>
-  ));
-}
+StatItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  percentage: PropTypes.number,
+};
