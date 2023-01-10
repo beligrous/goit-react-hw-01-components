@@ -1,7 +1,10 @@
 import user from '../user.json';
 import data from '../data.json';
-import Profile from './Profile';
-import StatItem from './Statistics';
+import friends from '../friends.json';
+import Profile from './Profile/Profile';
+import Stat from './Statistic/Statistic';
+import FriendList from './Friends/FriendList';
+
 export const App = () => {
   return (
     <div>
@@ -12,20 +15,8 @@ export const App = () => {
         location={user.location}
         stats={user.stats}
       />
-      <section className="statistics">
-        <h2 className="title">Upload stats</h2>
-        <ul className="stat-list">
-          {data.map(i => (
-            <StatItem
-              id={data.id}
-              label={data.label}
-              percentage={data.percentage}
-            />
-          ))}
-        </ul>
-      </section>
+      <Stat items={data} title={'Upload stats'} />
+      <FriendList friends={friends} />
     </div>
   );
 };
-
-console.log(data[1].id, data[2].label);

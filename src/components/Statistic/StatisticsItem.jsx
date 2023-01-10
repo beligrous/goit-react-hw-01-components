@@ -10,7 +10,7 @@ export default function StatItem({ id, label, percentage }) {
 }
 
 StatItem.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.string,
   percentage: PropTypes.number,
 };
