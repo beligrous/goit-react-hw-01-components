@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
+import { StatItem } from './Statistic.styled';
 
-export default function StatItem({ id, label, percentage }) {
+export default function StatisticItem({ id, label, percentage }) {
   return (
-    <li key={id} className="item">
+    <StatItem key={id}>
       <span className="label">{label}</span>
       <span className="percentage">{percentage}%</span>
-    </li>
+    </StatItem>
   );
 }
 
-StatItem.propTypes = {
+StatisticItem.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   percentage: PropTypes.number,

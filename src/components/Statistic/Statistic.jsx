@@ -1,24 +1,25 @@
-import StatItem from './StatisticsItem';
+import StatisticItem from './StatisticsItem';
+import { Container, StatList } from './Statistic.styled';
 import PropTypes from 'prop-types';
 
-export default function Stat({ items, title }) {
+export default function Statistic({ items, title }) {
   return (
-    <section className="statistics">
+    <Container>
       <h2 className="title">{title}</h2>
-      <ul className="stat-list">
+      <StatList>
         {items.map(item => (
-          <StatItem
+          <StatisticItem
             key={item.id}
             label={item.label}
             percentage={item.percentage}
           />
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </Container>
   );
 }
 
-Stat.propTypes = {
+Statistic.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,
