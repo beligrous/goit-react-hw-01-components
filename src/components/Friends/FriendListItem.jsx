@@ -1,9 +1,11 @@
+import { Friend, Avatar, Name, Status } from './Friends.styled';
+
 export default function FriendListItem({ avatar, name, isOnline, id }) {
   return (
-    <li className="item" key={id}>
-      <span className="status">{isOnline ? 'online' : 'offline'}</span>
-      <img className="avatar" src={avatar} alt={name} width="48" />
-      <p className="name">{name}</p>
-    </li>
+    <Friend key={id}>
+      <Status isOnline={isOnline}></Status>
+      <Avatar src={avatar} alt={name} width="48" />
+      <Name>{name}</Name>
+    </Friend>
   );
 }
