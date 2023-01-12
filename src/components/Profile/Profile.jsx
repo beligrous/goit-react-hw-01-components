@@ -12,10 +12,10 @@ export default function Profile({ username, tag, location, avatar, stats }) {
   return (
     <Container>
       <div>
-        <Image src={avatar} alt={username} className="avatar" />
+        <Image src={avatar} alt={username}/>
         <Name>{username}</Name>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
+        <p>@{tag}</p>
+        <p>{location}</p>
       </div>
       <StatsList>
         <StatsItem>

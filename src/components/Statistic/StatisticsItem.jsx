@@ -4,7 +4,7 @@ import { StatItem, StatValue } from './Statistic.styled';
 export default function StatisticItem({ id, label, percentage }) {
   return (
     <StatItem key={id} style={{ backgroundColor: `${getRandomHexColor()}` }}>
-      <span className="label">{label}</span>
+      <span>{label}</span>
       <StatValue>{percentage}%</StatValue>
     </StatItem>
   );
