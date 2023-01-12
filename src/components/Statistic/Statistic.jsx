@@ -1,11 +1,11 @@
 import StatisticItem from './StatisticsItem';
-import { Container, StatList } from './Statistic.styled';
+import { Container, StatList, Title } from './Statistic.styled';
 import PropTypes from 'prop-types';
 
 export default function Statistic({ items, title }) {
   return (
     <Container>
-      <h2 className="title">{title}</h2>
+      <Title>{title}</Title>
       <StatList>
         {items.map(item => (
           <StatisticItem

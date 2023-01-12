@@ -5,29 +5,40 @@ export const Container = styled.div`
   padding-top: 50px;
   margin: auto;
   text-align: center;
+  box-sizing: border-box;
   background-color: white;
-  border-radius: 20px;
+  border: 2px solid black;
 `;
 
 export const Image = styled.img`
   border-radius: 50%;
-  border: 5px solid grey;
+  border: 1px solid grey;
+  box-shadow: 10px 10px 40px 9px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 40px 9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 40px 9px rgba(0, 0, 0, 0.75);
 `;
 
 export const StatsList = styled.ul`
   display: flex;
   justify-content: center;
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
   background-color: tomato;
+  border-top: 2px solid black;
 `;
 
 export const StatsItem = styled.li`
   display: flex;
   flex-direction: column;
-  flex-basis: calc((100% - 100px) / 3);
+  flex-basis: 100%;
   padding: 30px;
   list-style: none;
-  border: 2px solid grey;
+  &:last-child {
+    border-left: 2px solid black;
+  }
+  &:first-child {
+    border-right: 2px solid black;
+  }
 `;
 
 export const Name = styled.p`
