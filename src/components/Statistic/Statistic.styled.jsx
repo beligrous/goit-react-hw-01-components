@@ -4,7 +4,6 @@ export const Container = styled.section`
   width: 800px;
   margin: auto;
   margin-top: 50px;
-  padding: 50px;
   text-align: center;
   background-color: white;
   border-radius: 20px;

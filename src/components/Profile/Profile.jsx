@@ -1,5 +1,12 @@
 import PropTypes from 'prop-types';
-import { Container, Image, Stats, StatsItem, Name } from './Profile.styled';
+import {
+  Container,
+  Image,
+  StatsList,
+  StatsItem,
+  Name,
+  Stats,
+} from './Profile.styled';
 
 export default function Profile({ username, tag, location, avatar, stats }) {
   return (
@@ -7,23 +14,23 @@ export default function Profile({ username, tag, location, avatar, stats }) {
       <div>
         <Image src={avatar} alt={username} className="avatar" />
         <Name>{username}</Name>
-        <p className="tag">{tag}</p>
+        <p className="tag">@{tag}</p>
         <p className="location">{location}</p>
       </div>
-      <Stats>
+      <StatsList>
         <StatsItem>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
+          <span>Followers</span>
+          <Stats>{stats.followers}</Stats>
         </StatsItem>
         <StatsItem>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
+          <span>Views</span>
+          <Stats>{stats.views}</Stats>
         </StatsItem>
         <StatsItem>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
+          <span>Likes</span>
+          <Stats>{stats.likes}</Stats>
         </StatsItem>
-      </Stats>
+      </StatsList>
     </Container>
   );
 }
