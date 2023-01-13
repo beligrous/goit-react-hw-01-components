@@ -33,11 +33,9 @@ export const Head = styled.th`
 export const Data = styled.td`
   padding: 10px;
   border: 1px solid #2a2a2a;
-
-  }
 `;
 
 export const Row = styled.tr`
 &:nth-child(2n) {
-  background-color: grey;
+  background-color: grey;}
 `;

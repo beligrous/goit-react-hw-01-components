@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default function Statistic({ items, title }) {
   return (
     <Container>
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
       <StatList>
         {items.map(item => (
           <StatisticItem
@@ -20,11 +20,10 @@ export default function Statistic({ items, title }) {
 }
 
 Statistic.propTypes = {
+  title: PropTypes.string,
   items: PropTypes.arrayOf(
-    PropTypes.exact({
+    PropTypes.shape({
       id: PropTypes.string.isRequired,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
     })
   ),
 };

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { StatItem, StatValue } from './Statistic.styled';
 
-export default function StatisticItem({ id, label, percentage }) {
+export default function StatisticItem({ label, percentage }) {
   return (
-    <StatItem key={id} style={{ backgroundColor: `${getRandomHexColor()}` }}>
+    <StatItem style={{ backgroundColor: `${getRandomHexColor()}` }}>
       <span>{label}</span>
       <StatValue>{percentage}%</StatValue>
     </StatItem>
@@ -11,9 +11,8 @@ export default function StatisticItem({ id, label, percentage }) {
 }
 
 StatisticItem.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string,
-  percentage: PropTypes.number,
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
 };
 
 function getRandomHexColor() {

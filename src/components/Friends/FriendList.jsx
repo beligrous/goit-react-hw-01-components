@@ -1,5 +1,6 @@
 import FriendListItem from './FriendListItem';
 import { Container } from './Friends.styled';
+import PropTypes from 'prop-types';
 
 export default function FriendList({ friends }) {
   return (
@@ -15,3 +16,11 @@ export default function FriendList({ friends }) {
     </Container>
   );
 }
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ),
+};
